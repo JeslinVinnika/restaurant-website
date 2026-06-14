@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load static %}
+{% if message %}
+
+<script>
+    alert('{{message}}');
+</script>
+
+{% endif %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Food Zone  - A Food Delivery Outlet</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="{% url 'index' %}" class="navbar-brand">Food <span>Zone</span></a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                        <a href="{% url 'feature' %}" class="nav-item nav-link">Feature</a>
+                        <a href="{% url 'team' %}" class="nav-item nav-link">Chef</a>
+                        <a href="{% url 'menu' %}" class="nav-item nav-link">Menu</a>
+                        <a href="{% url 'booking' %}" class="nav-item nav-link">Booking</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu">
+                                <a href="{% url 'blog' %}" class="dropdown-item">Blog Grid</a>
+                                <a href="{% url 'single' %}" class="dropdown-item">Blog Detail</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+        {% block content %}
+        {% endblock %}
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="footer-contact">
+                                    <h2>Our Address</h2>
+                                    <p><a href="https://maps.app.goo.gl/gJxUQAtXR45SRUfQ9"><i class="fa fa-map-marker-alt"></i></a>123 Street, New York, USA</p>
+                                    <p><a href="tel:+917845397974"><i class="fa fa-phone-alt"></i></a>+91 78453 97974</p>
+                                    <p><a href="mailto:ijeslin1785@gmail.com"><i class="fa fa-envelope"></i></a>ijeslin1785@gmail.com</p>
+                                    <div class="footer-social">
+                                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="footer-link">
+                                    <h2>Quick Links</h2>
+                                    <a href="{% url 'terms' %}">Terms of use</a>
+                                    <a href="{% url 'privacy' %}">Privacy policy</a>
+                                    <a href="{% url 'cookies' %}">Cookies</a>
+                                    <a href="{% url 'help' %}">Help</a>
+                                    <a href="{% url 'faq' %}">FQAs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <p>
+                                Stay Hungry! Subscribe to get tasty updates, special offers, and food news straight to your inbox.No spam....Just fresh updates and offers.We respect your privacy.
+                            </p>
+                            <form method="post" action="{% url 'news_letter' %}" class="form">
+                                {% csrf_token %}
+
+                                <input type="email" name="email" class="form-control" placeholder="Email goes here" required>
+                                <button class="btn custom-btn" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <p>Copyright &copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                    <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+        <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+        <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+        <script src="{% static 'mail/contact.js' %}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,409 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .hero {
+            background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836") center/cover no-repeat;
+            height: 250px;
+            border-radius: 10px;
+        }
+
+        .food-card img {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .cart-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-4">
+
+    <!-- Header -->
+    <h2 class="text-center mb-2">Restaurant Order Form</h2>
+    <p class="text-center text-muted">Choose your desired products</p>
+
+    <!-- Banner -->
+    <div class="hero mb-4"></div>
+
+    <!-- Food Items -->
+    <div class="row g-4">
+
+        <!-- Item 1 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/photo-1550547660-d9450f859349.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Mutton Burger</h6>
+                    <p class="text-muted small">Juicy grilled mutton with fresh veggies</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$12</span>
+                        <button data-name="Mutton Burger" data-price="12" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/chickensalad.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Chicken Salad</h6>
+                    <p class="text-muted small">Healthy and fresh chicken salad</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$16</span>
+                        <button data-name="Chicken salad" data-price="16"  class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/doughnut.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Creamy Doughnuts</h6>
+                    <p class="text-muted small">Tasty and creamy doughnuts</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$15</span>
+                        <button data-name="Creamy Doughnuts" data-price="15"  class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/photo-1551183053-bf91a1d81141.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Mutton Steak</h6>
+                    <p class="text-muted small">Premium grilled mutton steak</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$30</span>
+                        <button data-name="Mutton Steak" data-price="30"  class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Item 5 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/milkshake.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Chocolate Overloaded Milkshake</h6>
+                    <p class="text-muted small">Chocolate Overloaded Milkshake</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$17</span>
+                        <button data-name="Chocolate Overloaded Milkshake" data-price="17" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Item 6 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/momos.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Chicken Momos</h6>
+                    <p class="text-muted small">Healthy and juicy chicken momos</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$20</span>
+                        <button data-name="Chicken Momos" data-price="20"  class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Item 7 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/tea.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Cappuccino</h6>
+                    <p class="text-muted small">Authentic Cappuccino</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$19</span>
+                        <button data-name="Cappuccino" data-price="19" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Item 8-->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/sandwich.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Paneer Sandwich</h6>
+                    <p class="text-muted small">Healthy and fresh paneer sandwich</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$22</span>
+                        <button data-name="Paneer Sandwich" data-price="22" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Item 9-->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/mutton_kebab.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Mutton kebab</h6>
+                    <p class="text-muted small">Healthy and fresh mutton kebab</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$39</span>
+                        <button data-name="Mutton kebab" data-price="39" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Item 10 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/ice-cream.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Creamy Ice-Cream</h6>
+                    <p class="text-muted small">Fresh and creamy ice-cream</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$25</span>
+                        <button data-name="Creamy Ice-Cream" data-price="25" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 11 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/mojito.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Tangy Mojito</h6>
+                    <p class="text-muted small">Refreshing and tangy mojito</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$7</span>
+                        <button data-name="tangy mojito" data-price="7"  class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Item 12 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/golisoda.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Goli Soda</h6>
+                    <p class="text-muted small">Fizzy Goli Soda</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$10</span>
+                        <button data-name="Goli Soda" data-price="10" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <!-- Item 13 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/pizza.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Cheesy Veg Pizza</h6>
+                    <p class="text-muted small">Cheesy Pizza with fresh Veggies</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$20</span>
+                        <button data-name="Cheesy Veg Pizza" data-price="20" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+          <!-- Item 14 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/brownie.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Sizzling Brownie</h6>
+                    <p class="text-muted small">Sizzling Chocolatey Brownie</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$12</span>
+                        <button data-name="Sizzling Brownie" data-price="12" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+          <!-- Item 15 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/pasta.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>White sauce Pasta</h6>
+                    <p class="text-muted small">Creamy White sauce Pasta(Veg)</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$13</span>
+                        <button data-name="White sauce Pasta" data-price="13" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+          <!-- Item 16 -->
+        <div class="col-md-3">
+            <div class="card food-card">
+                <img src="{% static 'img/biriyani.jpeg' %}" class="card-img-top">
+                <div class="card-body">
+                    <h6>Mutton Biriyani</h6>
+                    <p class="text-muted small">Spicy and Tender Mutton Biriyani</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">$30</span>
+                        <button data-name="Mutton Biriyani" data-price="30" class="btn btn-success btn-sm buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart-box mt-5">
+        <h5>Cart</h5>
+        <hr>
+        <div id="cartItems"></div>
+        <p class="d-flex justify-content-between">
+            <span>Shipping</span>
+            <span class="text-success">Free</span>
+        </p>
+        <p class="d-flex justify-content-between">
+            <span>Subtotal</span>
+            <span>$<span id="subtotal">0</span></span>
+        </p>
+        <hr>
+        <p class="d-flex justify-content-between fw-bold">
+            <span>Total</span>
+            <span><span id="totalAmount">0</span></span>
+        </p>
+        <hr>
+        <h6>Payment Method</h6>
+        <div>
+            <input type="radio" name="payment" value="cod" checked>
+            <label>Cash On Delivery</label>
+        </div>
+
+          <div>
+            <input type="radio" name="payment" value="upi" checked>
+            <label>UPI / Card</label>
+        </div>
+        <br>
+        <button id="payBtn" class="btn btn-success w-100">Pay Now</button>
+        <button id="checkoutBtn" class="btn btn-dark w-100">Checkout</button>
+    </div>
+
+</div>
+
+
+
+
+<script>
+let cart = [];
+let subtotal = 0;
+
+document.querySelectorAll(".buy-btn").forEach(button => {
+    button.addEventListener("click", function () {
+
+        let name = this.dataset.name;
+        let price = parseFloat(this.dataset.price);
+
+        // Add item to cart array
+        cart.push({ name, price });
+
+        // Update subtotal
+        subtotal += price;
+
+        // Update cart UI
+        updateCart();
+    });
+});
+
+function updateCart() {
+    let cartItemsDiv = document.getElementById("cartItems");
+    cartItemsDiv.innerHTML = "";
+
+    cart.forEach(item => {
+        let div = document.createElement("div");
+        div.classList.add("d-flex", "justify-content-between");
+        div.innerHTML = `<span>${item.name}</span><span>$${item.price}</span>`;
+        cartItemsDiv.appendChild(div);
+    });
+
+    document.getElementById("subtotal").innerText = subtotal;
+    document.getElementById("totalAmount").innerText = subtotal;
+}
+
+// Checkout
+document.getElementById("checkoutBtn").addEventListener("click", function () {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+    } else {
+        alert("Proceeding to checkout 🚀");
+    }
+});
+
+document.getElementById("payBtn").addEventListener("click", function () {
+
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before payment.");
+        return;
+    }
+
+    let paymentMethod = document.querySelector(
+        'input[name="payment"]:checked'
+    ).value;
+
+    if (paymentMethod === "upi") {
+        window.location.href = "{% url 'upi_payment' %}";
+    } else {
+        alert("✅ Order placed successfully!\nPayment: Cash on Delivery");
+    }
+});
+</script>
+
+{% endblock %}

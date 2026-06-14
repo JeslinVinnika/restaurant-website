@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+        <!-- Page Header Start -->
+        <div class="page-header mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Food Menu</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Food Start -->
+        <div class="food mt-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="food-item">
+                            <i class="flaticon-burger"></i>
+                            <h2>Burgers</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem.
+                            </p>
+                            <a href="">View Menu</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="food-item">
+                            <i class="flaticon-snack"></i>
+                            <h2>Snacks</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem.
+                            </p>
+                            <a href="">View Menu</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="food-item">
+                            <i class="flaticon-cocktail"></i>
+                            <h2>Beverages</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem.
+                            </p>
+                            <a href="">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Food End -->
+
+
+        <!-- Menu Start -->
+        <div class="menu">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Food Menu</p>
+                    <h2>Delicious Food Menu</h2>
+                </div>
+                <div class="menu-tab">
+                    <ul class="nav nav-pills justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="pill" href="#burgers">Special Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#snacks">Snacks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#beverages">Beverages</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="burgers" class="container tab-pane active">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/photo-1550547660-d9450f859349.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Mutton Burger</span> <strong>$12.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/chickensalad.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Chicken Salad</span> <strong>$16.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/photo-1551183053-bf91a1d81141.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Mutton Steak</span> <strong>$30.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/mutton_kebab.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Mutton Kebab</span> <strong>$39.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/biriyani.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Mutton Biriyani</span> <strong>$30.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="{% static 'img/menu-burger-img.jpg' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="snacks" class="container tab-pane fade">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/doughnut.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Creamy Doughnuts</span> <strong>$15.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/momos.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Chicken Momos</span> <strong>$20.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/sandwich.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Paneer Sandwich</span> <strong>$22.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/pasta.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Creamy White Sauce Pasta</span> <strong>$13.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="{% static 'img/menu-snack-img.jpg' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="beverages" class="container tab-pane fade">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/golisoda.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Goli Soda</span> <strong>$10.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/mojito.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Tangy Mojitto</span> <strong>$7.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/ice-cream.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Ice-Cream</span> <strong>$25.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/tea.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Authentic Cappuccino</span> <strong>$19.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/milkshake.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Chocolate Overloaded Milkshake</span> <strong>$17.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="{% static 'img/menu-beverage-img.jpg' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu End -->
+
+
+
+{% endblock %}

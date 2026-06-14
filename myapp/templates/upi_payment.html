@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UPI Payment</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f8f9fa;
+        }
+        .box {
+            width: 400px;
+            margin: 80px auto;
+            padding: 25px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        input, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        button {
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>UPI Payment</h2>
+
+    <form onsubmit="payNow(event)">
+        <input type="text" placeholder="UPI ID (example@upi)" required>
+        <input type="text" placeholder="Account Holder Name" required>
+        <input type="password" placeholder="UPI PIN" required>
+
+        <button type="submit">Pay</button>
+    </form>
+</div>
+
+<script>
+function payNow(event) {
+    event.preventDefault();
+    alert("✅ Payment Successful!");
+    window.location.href = "{% url 'payment_success' %}";
+}
+</script>
+
+</body>
+</html>

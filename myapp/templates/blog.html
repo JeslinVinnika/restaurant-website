@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Food Blog</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Blog Start -->
+        <div class="blog">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Food Blog</p>
+                    <h2>Latest From Food Blog</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="{% static 'img/blog-1.jpg' %}" alt="Blog">
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blog-title">Why Our Burgers are Everyone's Favourite?</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Admin</p>
+                                    <p><i class="far fa-list-alt"></i>Food</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>10</p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                      At Food Zone, our burgers are crafted with freshly baked buns, juicy patties, and farm-fresh vegetables. Every bite is packed with flavor, balance, and quality. We avoid frozen ingredients and focus on real taste that satisfies every craving. From classic cheeseburgers to spicy specials, our burgers are made to impress.
+                                    </p>
+                                    <a class="btn custom-btn" href="">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="{% static 'img/quality.jpeg' %}" alt="Blog">
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blog-title">Fresh Ingredients Make The Real Difference</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Admin</p>
+                                    <p><i class="far fa-list-alt"></i>Food</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>10</p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                   At Food Zone, quality is our top priority. Every ingredient is carefully selected, every dish is prepared hygienically, and every order is checked before serving. We believe good food should not only taste great but also be safe, fresh, and nourishing.We never compromise on quality.
+                                     </p>
+                                    <a class="btn custom-btn" href="">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="{% static 'img/chef1.jpeg' %}" alt="Blog">
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blog-title">Meet Our World Class Chef</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Admin</p>
+                                    <p><i class="far fa-list-alt"></i>Food</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>10</p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                   Our kitchen is led by a passionate chef with years of experience in creating mouth-watering dishes. From perfect seasoning to beautiful presentation, every dish reflects expertise and love for food.Led by world-class chefs, every meal is crafted with precision, flavor, and love. At Food Zone, every plate tells a story.
+                                     </p>
+                                    <a class="btn custom-btn" href="">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="{% static 'img/blog-3.jpg' %}" alt="Blog">
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blog-title">Perfect Place For Private Dinners And Happy Hours</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Admin</p>
+                                    <p><i class="far fa-list-alt"></i>Food</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>10</p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+Planning a private dinner or a happy hour with friends? Food Zone offers a cozy ambiance, customized menus, and fast service to make your moments special. Whether it’s a birthday, office party, or casual get-together, we make it memorable.
+                                     </p>
+                                    <a class="btn custom-btn" href="">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+{% endblock %}

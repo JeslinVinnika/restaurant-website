@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% if message %}
+
+<script>
+    alert('{{message}}');
+</script>
+
+{% endif %}
+        <!-- Page Header Start -->
+        <div class="page-header mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Book A Table</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Booking Start -->
+
+      <div class="booking">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="booking-content">
+                            <div class="section-header">
+                                <p>Book A Table</p>
+                                <h2>Book Your Table For Private Dinners & Happy Hours</h2>
+                            </div>
+                            <div class="about-text">
+                                <p>
+                                   Enjoy a warm and welcoming dining experience by reserving your table in advance. Whether you’re planning a private dinner or a relaxing happy hour with friends, we offer the perfect ambiance, delicious food, and attentive service to make every visit special.       </p>
+                                <p>
+                                   Book your table in advance and enjoy a comfortable, memorable dining experience tailored to your special moments. Whether you are planning a private dinner, a family celebration, a business meeting, or a relaxing happy hour with friends, our restaurant offers the perfect setting. We provide a warm ambiance, attentive service, and a carefully curated menu to suit every taste. From delicious meals to refreshing beverages, every detail is designed to make your visit enjoyable and stress-free. Reserve your table today and let us create an unforgettable dining experience for you and your guests.     </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="booking-form">
+                            <form method="post" action="{% url 'booking' %}">
+                                {% csrf_token %}
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="name" placeholder="Name" required="required" />
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="far fa-user"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <input type="email" name="email" class="form-control" placeholder="Email" required="required" />
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <input type="text" name="mobile" class="form-control" placeholder="Mobile" required="required" />
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="input-group date" id="date" data-target-input="nearest">
+                                        <input type="date" name="date" class="form-control" placeholder="Date" />
+                                        <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="input-group time" id="time" data-target-input="nearest">
+                                        <input type="text" name="time" class="form-control" placeholder="Time" required/>
+                                        <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <select name="guests" class="custom-select form-control" >
+                                            <option value="" selected disabled>Guest</option>
+                                            <option value="1">1 Guest</option>
+                                            <option value="2">2 Guest</option>
+                                            <option value="3">3 Guest</option>
+                                            <option value="4">4 Guest</option>
+                                            <option value="5">5 Guest</option>
+                                            <option value="6">6 Guest</option>
+                                            <option value="7">7 Guest</option>
+                                            <option value="8">8 Guest</option>
+                                            <option value="9">9 Guest</option>
+                                            <option value="10">10 Guest</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><i class="fa fa-chevron-down"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn custom-btn" type="submit">Book Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  </div>
+        <!-- Booking End -->
+
+
+        <!-- Menu Start -->
+      <div class="menu">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Food Menu</p>
+                    <h2>Delicious Food Menu</h2>
+                </div>
+                <div class="menu-tab">
+                    <ul class="nav nav-pills justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="pill" href="#burgers">Special Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#snacks">Snacks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#beverages">Beverages</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="burgers" class="container tab-pane active">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/photo-1550547660-d9450f859349.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Mutton Burger</span> <strong>$12.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/chickensalad.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Chicken Salad</span> <strong>$16.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/photo-1551183053-bf91a1d81141.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Mutton Steak</span> <strong>$30.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/mutton_kebab.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Mutton Kebab</span> <strong>$39.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/biriyani.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Mutton Biriyani</span> <strong>$30.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="{% static 'img/menu-burger-img.jpg' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="snacks" class="container tab-pane fade">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/doughnut.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Creamy Doughnuts</span> <strong>$15.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/momos.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Chicken Momos</span> <strong>$20.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/sandwich.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Paneer Sandwich</span> <strong>$22.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/pasta.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Creamy White Sauce Pasta</span> <strong>$13.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="{% static 'img/menu-snack-img.jpg' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="beverages" class="container tab-pane fade">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/golisoda.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Goli Soda</span> <strong>$10.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/mojito.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Tangy Mojitto</span> <strong>$7.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/ice-cream.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Ice-Cream</span> <strong>$25.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/tea.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Authentic Cappuccino</span> <strong>$19.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-img">
+                                            <img src="{% static 'img/milkshake.jpeg' %}" alt="Image">
+                                        </div>
+                                        <div class="menu-text">
+                                            <h3><span>Chocolate Overloaded Milkshake</span> <strong>$17.00</strong></h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <img src="{% static 'img/menu-beverage-img.jpg' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu End -->
+{% endblock %}
